@@ -8,7 +8,6 @@ This project evaluates individual productivity using **volume-normalized efficie
 
 **Relative Efficiency** measures an employee’s productivity **relative to the average productivity within the same labor company and the same time bin**, removing the effect of system-level volume fluctuations.
 
-#### Formula
 
 <img width="1505" height="621" alt="2f1f00d34ad9269df698c2c73060b5c4" src="https://github.com/user-attachments/assets/587c46ec-4400-42fc-bf7f-72dd244c7704" />
 
