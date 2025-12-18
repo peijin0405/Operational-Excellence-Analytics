@@ -1,5 +1,79 @@
 ## 📊 Metrics Definition
 
+This project evaluates individual productivity using volume-normalized metrics,
+designed to remove system-level workload fluctuation.
+
+---
+
+### 1. Relative Efficiency (Normalized Efficiency)
+
+Relative Efficiency measures how productive an employee is compared to peers
+within the same labor company and the same time bin.
+
+Formula:
+
+Relative_Efficiency(i, t) =
+    Scans(i, t) / Avg_Company_Scans(t)
+
+Where:
+- Scans(i, t): number of scans completed by employee i at time bin t
+- Avg_Company_Scans(t): average scans of all employees in the same company at time t
+
+Interpretation:
+- = 1.0  → employee performs at company average
+- > 1.0 → above-average efficiency
+- < 1.0 → below-average efficiency
+
+This normalization removes hour-level volume effects and enables fair comparison.
+
+---
+
+### 2. De-trended CV (De-trended Coefficient of Variation)
+
+De-trended CV measures how stable an employee’s performance is after removing
+systematic workload patterns.
+
+Step 1: De-trended Residual
+
+Residual(i, t) =
+    Scans(i, t) - Avg_Company_Scans(t)
+
+This captures how much an employee deviates from the company average
+at a given time bin.
+
+Step 2: De-trended CV
+
+DeTrended_CV(i) =
+    StdDev(Residual(i, t)) / Mean(Scans(i, t))
+
+Where:
+- StdDev(Residual): standard deviation across time bins
+- Mean(Scans): employee’s average raw scan volume
+
+Interpretation:
+- Lower value → more stable performance
+- Higher value → more volatile performance
+
+Unlike raw CV, this metric reflects individual consistency rather than
+system-level volume fluctuation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 📊 Metrics Definition
+
 This project evaluates individual productivity using **volume-normalized efficiency metrics**, designed to ensure fair comparison under fluctuating workloads.
 
 ---
