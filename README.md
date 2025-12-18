@@ -25,34 +25,8 @@ This normalization removes hour-level volume effects and enables **fair within-c
 
 **De-trended CV** measures how **stable** an employee’s performance is after removing systematic workload patterns.
 
-#### Step 1: De-trended Residual
-
-\[
-\text{Residual}_{i,t}
-=
-\text{Scans}_{i,t}
--
-\frac{1}{N}\sum_{j=1}^{N}\text{Scans}_{j,t}
-\]
-
-This residual captures how much employee *i* deviates from the company average at time bin *t*.
-
-#### Step 2: De-trended CV
-
-\[
-\text{DeTrended CV}_{i}
-=
-\frac{\sigma(\text{Residual}_{i,t})}
-{\mu(\text{Scans}_{i,t})}
-\]
-
-Where:
-- \(\sigma(\cdot)\): standard deviation across time bins
-- \(\mu(\text{Scans}_{i,t})\): mean raw scan count of employee *i*
-
-#### Interpretation
-- **Lower values** → more stable performance across time  
-- **Higher values** → greater variability, even after workload trends are removed  
+<img width="1706" height="1026" alt="5d5d252c313b32c0405afd7a2f0cd3c4" src="https://github.com/user-attachments/assets/567610d4-5657-4e14-a44e-c7d2575c982c" />
+  
 
 Unlike raw CV, De-trended CV reflects **individual inconsistency rather than system-level volume fluctuation**.
 
