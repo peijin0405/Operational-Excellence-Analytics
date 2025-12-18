@@ -10,19 +10,8 @@ This project evaluates individual productivity using **volume-normalized efficie
 
 #### Formula
 
-For employee *i* at time bin *t*:
+<img width="1505" height="621" alt="2f1f00d34ad9269df698c2c73060b5c4" src="https://github.com/user-attachments/assets/587c46ec-4400-42fc-bf7f-72dd244c7704" />
 
-\[
-\text{Relative Efficiency}_{i,t}
-=
-\frac{\text{Scans}_{i,t}}
-{\frac{1}{N}\sum_{j=1}^{N}\text{Scans}_{j,t}}
-\]
-
-Where:
-- \(\text{Scans}_{i,t}\): number of scans completed by employee *i* during time bin *t*
-- \(N\): number of employees in the **same labor company**
-- The denominator represents the **company-level average scans** at time *t*
 
 #### Interpretation
 - **1.0** → performance equals the company average for that hour  
