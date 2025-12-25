@@ -42,7 +42,7 @@ div[data-testid="stMetric"]{
 # ======================
 # Config
 # ======================
-DEFAULT_FILE_PATH = "data/scanRecord_1765906490414.xlsx"
+DEFAULT_FILE_PATH = "data/scanRecord_1766632272775.xlsx"
 DEFAULT_SORTER_NAME = "sorter"  # 仍保留 sorter 概念（图1需要）
 SHIFT_OPTIONS = ["Early (07-15)", "Mid (15-23)", "Night (23-07)"]
 SORTING_CENTER = "MIA.H"
