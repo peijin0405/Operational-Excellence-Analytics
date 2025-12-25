@@ -1,10 +1,28 @@
-## 📊 Metrics Definition
+
+## Operational Excellence Analytics (Streamlit App)
+
+**Operational Excellence Analytics** is a Streamlit-based analytics application designed for **fine-grained labor productivity management** in operational environments such as logistics, sorting centers, and warehouse operations.
+
+The app transforms raw scan-level data into **actionable operational insights**, enabling managers to understand when, where, and who drives efficiency — and where targeted interventions are needed.
+
+Live Demo
+
+👉 Streamlit App:
+https://operational-excellence-analytics-obqccuuuf2as9aprzitfzz.streamlit.app/
+
+<img width="2214" height="1262" alt="ba53a0c88fef1651575e25976598fe3e" src="https://github.com/user-attachments/assets/95abce3d-1b00-48e3-8449-7436da127b91" />
+
+<img width="2221" height="1429" alt="fa00cdd41866ec9548aa1dec05fce11a" src="https://github.com/user-attachments/assets/5bc33b3b-4a87-431e-af31-f5e30d06721d" />
+
+<img width="2167" height="1384" alt="a2cadfab7095f9f458b82ad1ad32d190" src="https://github.com/user-attachments/assets/c13de6d8-0f48-4520-8b65-5ee34d907eff" />
+
+### 📊 Metrics Definition
 
 This project evaluates individual productivity using **volume-normalized efficiency metrics** to ensure fair comparison under fluctuating workloads.
 
 ---
 
-### 1. Relative Efficiency (Normalized Efficiency)
+#### 1. Relative Efficiency (Normalized Efficiency)
 
 **Relative Efficiency** measures an employee’s productivity **relative to the average productivity within the same labor company and the same time bin**, removing the effect of system-level volume fluctuations.
 
@@ -12,7 +30,7 @@ This project evaluates individual productivity using **volume-normalized efficie
 <img width="1505" height="621" alt="2f1f00d34ad9269df698c2c73060b5c4" src="https://github.com/user-attachments/assets/587c46ec-4400-42fc-bf7f-72dd244c7704" />
 
 
-#### Interpretation
+##### Interpretation
 - **1.0** → performance equals the company average for that hour  
 - **> 1.0** → above-average efficiency  
 - **< 1.0** → below-average efficiency  
@@ -21,7 +39,7 @@ This normalization removes hour-level volume effects and enables **fair within-c
 
 ---
 
-### 2. De-trended CV (De-trended Coefficient of Variation)
+#### 2. De-trended CV (De-trended Coefficient of Variation)
 
 **De-trended CV** measures how **stable** an employee’s performance is after removing systematic workload patterns.
 
@@ -32,7 +50,7 @@ Unlike raw CV, De-trended CV reflects **individual inconsistency rather than sys
 
 ---
 
-### 📌 Why These Metrics Are Used Together
+#### 📌 Why These Metrics Are Used Together
 
 | Metric | Captures | Key Question |
 |------|--------|-------------|
@@ -45,32 +63,30 @@ Together, these metrics enable **volume-adjusted, within-company productivity ev
 
 
 
-
-
-### 🔍 Project Notes
+#### 🔍 Project Notes
 
 - All normalizations are computed **within each labor company**, not across the entire workforce.
 - Time bins are treated as independent workload periods.
 - Metrics are designed for **intra-company benchmarking**, not cross-company ranking.
 
 
-## 指标说明（Metrics Definition）
+### 指标说明（Metrics Definition）
 
 本项目通过 **相对效率（Relative Efficiency / Normalized Efficiency）** 和  
 **去趋势 CV（De-trended Coefficient of Variation）** 两个指标，对员工在不同时间段、不同货量条件下的工作表现进行**公平、可解释的评估**。
 
 ---
 
-### 一、相对效率（Relative Efficiency / Normalized Efficiency）
+#### 一、相对效率（Relative Efficiency / Normalized Efficiency）
 
 相对效率用于衡量某位员工在某一时间段内的工作效率，**相对于同一劳务公司、同一时间段内其他员工的平均水平**，从而抵消整体货量波动带来的影响。
 
-#### 计算公式
+##### 计算公式
 
 <img width="1582" height="457" alt="0b86da3900c2ee7a1447cfb1eb3ac9e8" src="https://github.com/user-attachments/assets/dedf2cd2-b1f1-414a-91e6-295f7b7bbe76" />
 
 
-#### 指标解释
+##### 指标解释
 - 相对效率 = 1：该员工在该时段的效率等于公司平均水平  
 - 相对效率 > 1：高于公司平均效率  
 - 相对效率 < 1：低于公司平均效率  
@@ -79,7 +95,7 @@ Together, these metrics enable **volume-adjusted, within-company productivity ev
 
 ---
 
-### 二、去趋势 CV（De-trended Coefficient of Variation）
+#### 二、去趋势 CV（De-trended Coefficient of Variation）
 
 去趋势 CV 用于衡量员工在剔除时间段货量影响后的**工作稳定性**，反映员工在相似工作负荷条件下的效率波动程度。
 
@@ -92,7 +108,7 @@ Together, these metrics enable **volume-adjusted, within-company productivity ev
 
 ---
 
-### 三、指标组合使用说明
+#### 三、指标组合使用说明
 
 | 指标 | 反映内容 | 回答问题 |
 |------|--------|--------|
@@ -103,7 +119,7 @@ Together, these metrics enable **volume-adjusted, within-company productivity ev
 
 ---
 
-### 四、使用说明与范围
+#### 四、使用说明与范围
 
 - 所有指标均在**劳务公司内部**进行计算，不用于跨公司直接对比  
 - 时间段（Time Bin）被视为独立的工作负荷区间  
